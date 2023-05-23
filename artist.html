@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+    <title>刺青師ARTIST</title>
+</head>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    /* outline: solid red; */
+}
+header{
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+}
+/* .header_container{
+    width: 1920px;
+    background-color: rgb(203, 203, 203);
+    padding: 30px 0;
+} */
+.menu_list_logo img{
+    width: 64px;
+    display: block;
+}
+.menu li{
+    list-style: none;
+}
+nav a{
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+}
+nav{
+    display: flex;
+    justify-content: space-evenly;
+}
+.menu_list_left{
+    display: flex;
+    padding: 20px 50px;
+}
+.menu_list_left li{
+    padding: 20px 30px 20px 30px;
+}
+.menu_list_right{
+    display: flex;
+    padding: 20px 120px;
+}
+.menu_list_right li{
+    text-align: center;
+    padding: 20px;
+}
+.menu_list_logo{
+    margin: auto;
+}
+.cart_icon{
+    padding: 20px 10px;
+}
+nav h3{
+    font-size: 14px;
+    text-align: center;
+}
+.artist_title{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 100px 0 50px 0;
+    position: relative;
+}
+.artist_title h2{
+    font-size: 36px;
+    font-family: 'Noto Sans TC', sans-serif;
+    letter-spacing: 0.15em;
+    font-weight: 400;
+}
+.artist_title h3{
+    font-size: 24px;
+    font-family: 'Noto Sans TC', sans-serif;
+    letter-spacing: 0.2em;
+    font-weight: 400;
+}
+.artist_title img{
+    width: 40px;
+    position: absolute;
+    left: 835px;
+    bottom: 100px;
+    z-index: -1;
+}
+.artist_tab_container{
+    display: flex;
+    justify-content: center;
+}
+.job{
+    writing-mode: vertical-lr;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.artist_text{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.artist_text h4{
+    font-family: 'Noto Sans CJK TC';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0.15em;
+    padding: 5px 15px;
+}
+.artist_name h2{
+    font-family: 'Noto Sans CJK TC';
+    font-weight: 700;
+    font-size: 48px;
+    letter-spacing: 0.15em;
+    margin: 18px 0;
+}
+.introduce_text{
+    display: flex;
+    padding: 20px 20px;
+    background: #FFFFFF;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    position: relative;
+}
+.job h4{
+    font-family: 'Noto Sans CJK TC';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0.15em;
+}
+.tab1_box{
+    position: relative;
+    margin: 30px;
+}
+.tab1_background{
+    position: relative;
+    z-index: -1;
+}
+.introduce_box{
+    position: absolute;
+    top: 25px;
+    left: 30px;
+}
+.artist_img{
+    display: flex;
+    margin: auto;
+    padding: 10px;
+}
+.tattoo_img_box{
+    width: 1020px;
+    position: relative;
+}
+.tattoo_img_box img{
+    transition: 0.5s ease-in-out;
+    filter: grayscale(100%);
+    margin: 5px;
+}
+.tattoo_img_box img:hover{
+    transition: 1s;
+    filter: grayscale(0%);
+    cursor: pointer;
+}
+.square{
+    position: absolute;
+    z-index: -1;
+    top: -80px;
+    left: 300px;
+}
+.nimo_tattoo_img_box{
+    width: 1020px;
+    position: relative;
+}
+.nimo_tattoo_img img{
+    border: 1px solid black;
+    border-radius: 20px;
+    margin: 5px;
+}
+.tab_css{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+.tab_css input{
+    display:none
+}
+.tab_css label{
+    opacity: 0.6;
+    cursor: pointer; 
+}
+.tab_content{
+    position: relative;
+    order:1;
+    display: none; 
+    width:100%;
+    margin: 100px 0; 
+    /* border-bottom: 3px solid #ddd;  */
+    /* line-height: 1.6;  */
+    /* font-size: 20px;  */
+    /* padding: 15px;  */
+    /* border: 1px solid #ddd;  */
+    /* border-radius: 5px; */
+}
+.tab_css input:checked + label, .tab_css label:hover{
+    opacity: 1; 
+}
+.tab_css input:checked + label + .tab_content{
+    display: flex;
+    justify-content: center;
+}
+.footer_container{
+        background-color: #DFDFDF;
+        padding: 60px;
+    }
+    .store_information_box{
+        display: flex;
+    }
+    .footer_container h3{
+        font-size: 24px;
+        padding: 20px 10px 40px 10px;
+        letter-spacing: 0.15em;
+        font-weight: 500;
+    }
+    .footer_container h4{
+        font-size: 20px;
+        padding: 10px;
+        font-weight: 400;
+        letter-spacing: 0.15em;
+        line-height: 40px;
+    }
+    .store_zh{
+        padding: 10px 20px 10px ;
+        width: 600px;
+    }
+    .store_en{
+        padding: 10px 20px 10px ;
+        width: 800px;
+    }
+    .footer_container span{
+        font-weight: 500;
+    }
+    .footer_icon{
+        display: flex;
+        justify-content: right;
+        position: relative;
+        bottom: 300px;
+    }
+    .footer_link{
+        display: flex;
+        margin-left: auto;
+    }
+    .footer_link li{
+        list-style: none;
+        padding: 0 10px;
+    }
+    .footer_link_box{
+        display: flex;
+    }
+    .footer_link a{
+        color: black;
+        font-size: 14px;
+        font-weight: 400;
+    }
+    .menu_list_left li::after{
+        content:" ";
+        display:block; 
+        width: 0%;
+        height: 1px;
+        background-color: black;
+        transition: .4s .2s;
+    }
+    .menu_list_left li:hover::after{
+        width: 100%;
+    }
+    .menu_list_right li::after{
+        content:" ";
+        display:block; 
+        width: 0%;
+        height: 1px;
+        background-color: black;
+        transition: .4s .2s;
+    }
+    .menu_list_right li:hover::after{
+        width: 100%;
+    }
+</style>
+<body>
+        <header>
+        <div class="header_container">
+            <div class="menu">
+                <nav>
+                    <ul class="menu_list_left">
+                        <li><a href="about.html">Cute n' Cool?<h3>ABOUT</h3></a></li>
+                        <li><a href="news.html">近期活動<h3>NEWS</h3></a></li>
+                        <li><a href="artist.html">刺青師<h3>ARTIST</h3></a></li>
+                        <li><a href="product.html">店內商品<h3>PRODUCT</h3></a></li>
+                    </ul>
+                    <div class="menu_list_logo">
+                        <a href="Cute n' Cool.html"><img src="LOGO/LOGO.png" alt=""></a>
+                    </div>
+                    <ul class="menu_list_right">
+                        <li><a href="notice.html">預約流程<h3>APPOINTMENT<br>PROCESS</h3></a>
+                        </li>
+                        <li><a href="appointment.html">預約討論<h3>APPOINTMENT</h3></a></li>
+                        <div class="cart_icon">
+                            <a href="shopping_cart.html"><img src="img/cart.png" alt=""></a>
+                        </div>
+                        <li><a href="login.html">登入<h3>LOG IN</h3></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="artist_title">
+        <h2>本店刺青師</h2>
+        <h3>ARTIST</h3>
+        <img src="img/title.png" alt="">
+    </div>
+    <div class="tab_css">
+        <input id="tab1" type="radio" name="tab" checked="checked"/>
+        <label for="tab1">
+            <div class="tab1_box">
+                <div class="tab1_background">
+                    <img src="img/artist_img/JONES/1-1-1.svg" alt="">
+                    <div class="introduce_box">
+                        <div class="introduce_text">
+                            <div class="job">
+                                <h4>刺青師</h4>
+                            </div>
+                            <div class="artist_img">
+                                <img src="img/artist_img/JONES/1-1.png" alt="">
+                            </div>
+                            <div class="artist_text">
+                                <h4>#OLD SCHOOL</h4>
+                                <h4>#黑白風格刺青</h4>
+                                <h4>#可客製刺青</h4>
+                            </div>
+                            <div class="ig_icon">
+                                <img src="img/artist_img/ig_icon.png" alt="">
+                            </div>
+                        </div>
+                        <div class="artist_name">
+                            <h2>JONES</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </label>
+        <div class="tab_content">
+            <div class="tattoo_img_box">  
+                <img src="img/artist_img/JONES/1-2.png" alt="">
+                <img src="img/artist_img/JONES/1-3.png" alt="">
+                <img src="img/artist_img/JONES/1-4.png" alt="">
+                <img src="img/artist_img/JONES/1-5.png" alt="">
+                <img src="img/artist_img/JONES/1-6.png" alt="">
+                <img src="img/artist_img/JONES/1-7.png" alt="">
+                <img src="img/artist_img/JONES/1-8.png" alt="">
+                <img src="img/artist_img/JONES/1-9.png" alt="">
+                <img src="img/artist_img/JONES/1-10.png" alt="">
+                <img src="img/artist_img/JONES/1-11.png" alt="">
+                <img src="img/artist_img/JONES/1-12.png" alt="">
+                <img src="img/artist_img/JONES/1-13.png" alt="">
+                <img src="img/artist_img/JONES/1-14.png" alt="">
+                <img src="img/artist_img/JONES/1-15.png" alt="">
+                <img src="img/artist_img/JONES/1-16.png" alt="">
+                <img src="img/artist_img/JONES/1-17.png" alt="">
+            </div>
+            <div class="square">
+                <img src="img/artist_img/JONES/1-1-3.svg" alt="">
+            </div>
+        </div>
+    
+        <input id="tab2" type="radio" name="tab"/>
+        <label for="tab2">
+            <div class="tab1_box">
+                <div class="tab1_background">
+                    <img src="img/artist_img/EMMA/2-1-1.svg" alt="">
+                    <div class="introduce_box">
+                        <div class="introduce_text">
+                            <div class="job">
+                                <h4>刺青師</h4>
+                            </div>
+                            <div class="artist_img">
+                                <img src="img/artist_img/EMMA/2-1.png" alt="">
+                            </div>
+                            <div class="artist_text">
+                                <h4>#高彩度色塊刺青</h4>
+                                <h4>#無客製刺青</h4>
+                            </div>
+                            <div class="ig_icon">
+                                <img src="img/artist_img/ig_icon.png" alt="">
+                            </div>
+                        </div>
+                        <div class="artist_name">
+                            <h2>EMMA</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </label>
+        <div class="tab_content">
+            <div class="tattoo_img_box">
+                <img src="img/artist_img/EMMA/2-2.png" alt="">
+                <img src="img/artist_img/EMMA/2-3.png" alt="">
+                <img src="img/artist_img/EMMA/2-4.png" alt="">
+                <img src="img/artist_img/EMMA/2-5.png" alt="">
+                <img src="img/artist_img/EMMA/2-6.png" alt="">
+                <img src="img/artist_img/EMMA/2-7.png" alt="">
+                <img src="img/artist_img/EMMA/2-8.png" alt="">
+                <img src="img/artist_img/EMMA/2-9.png" alt="">
+                <img src="img/artist_img/EMMA/2-10.png" alt="">
+                <img src="img/artist_img/EMMA/2-11.png" alt="">
+                <img src="img/artist_img/EMMA/2-12.png" alt="">
+                <img src="img/artist_img/EMMA/2-13.png" alt="">
+                <img src="img/artist_img/EMMA/2-14.png" alt="">
+                <img src="img/artist_img/EMMA/2-15.png" alt="">
+                <img src="img/artist_img/EMMA/2-16.png" alt="">
+                <img src="img/artist_img/EMMA/2-17.png" alt="">
+            </div>
+            <div class="square">
+                <img src="img/artist_img/EMMA/2-1-3.svg" alt="">
+            </div>
+        </div>
+    
+        <input id="tab3" type="radio" name="tab"/>
+        <label for="tab3">
+            <div class="tab1_box">
+                <div class="tab1_background">
+                    <img src="img/artist_img/NIMO/3-1-1.svg" alt="">
+                    <div class="introduce_box">
+                        <div class="introduce_text">
+                            <div class="job">
+                                <h4>魔法學徒</h4>
+                            </div>
+                            <div class="artist_img">
+                                <img src="img/artist_img/NIMO/3-1.png" alt="">
+                            </div>
+                            <div class="artist_text">
+                                <h4>#黑白素描刺青</h4>
+                                <h4>#可客製刺青</h4>
+                            </div>
+                            <div class="ig_icon">
+                                <img src="img/artist_img/ig_icon.png" alt="">
+                            </div>
+                        </div>
+                        <div class="artist_name">
+                            <h2>NIMO</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </label>
+        <div class="tab_content">
+            <div class="nimo_tattoo_img_box">
+                <div class="nimo_tattoo_img">
+                    <img src="img/artist_img/NIMO/3-2.png" alt="">
+                    <img src="img/artist_img/NIMO/3-3.png" alt="">
+                    <img src="img/artist_img/NIMO/3-4.png" alt="">
+                    <img src="img/artist_img/NIMO/3-5.png" alt="">
+                    <img src="img/artist_img/NIMO/3-6.png" alt="">
+                    <img src="img/artist_img/NIMO/3-7.png" alt="">
+                    <img src="img/artist_img/NIMO/3-8.png" alt="">
+                    <img src="img/artist_img/NIMO/3-9.png" alt="">
+                    <img src="img/artist_img/NIMO/3-10.png" alt="">
+                    <img src="img/artist_img/NIMO/3-11.png" alt="">
+                    <img src="img/artist_img/NIMO/3-12.png" alt="">
+                    <img src="img/artist_img/NIMO/3-13.png" alt="">
+                    <img src="img/artist_img/NIMO/3-14.png" alt="">
+                    <img src="img/artist_img/NIMO/3-15.png" alt="">
+                    <img src="img/artist_img/NIMO/3-16.png" alt="">
+                    <img src="img/artist_img/NIMO/3-17.png" alt="">
+                </div>
+            </div>
+            <div class="square">
+                <img src="img/artist_img/NIMO/3-1-3.svg" alt="">
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer_container">
+            <div class="store_information_box">
+                <div class="store_zh">
+                    <h3>商店資訊</h3>
+                    <h4><span>營業時間：</span>3:00pm-8:00pm(每週三公休)</h4>
+                    <h4><span>地址：</span>104台北市中山區中山北路一段140巷18號3樓</h4>
+                    <h4><span>聯絡電話：</span>0939-827881</h4>
+                </div>
+                <div class="store_en">
+                    <h3>STORE INFORMATION</h3>
+                    <h4><span>STORE HOURS：</span>3:00pm-8:00pm(closed on Wednesday)</h4>
+                    <h4><span>ADDRESS：</span>3F,No.18,Ln.140,Sec.1,Zhongshan N. Rd,<br>Zhongshan Dist,Taipei City 104, Taiwan</h4>
+                    <h4><span>TELEPHONE：</span>0939-827881</h4>
+                </div>
+            </div>
+            <div class="footer_icon">
+                <img src="img/facebook_icon.png" alt="">
+                <img src="img/instagram_icon.png" alt="">
+            </div>
+            <div class="footer_link_box">
+                <ul class="footer_link">
+                    <li><a href="http://127.0.0.1:5501/about.html">ABOUT</a></li>
+                    <li><a href="http://127.0.0.1:5501/news.html">NEWS</a></li>
+                    <li><a href="http://127.0.0.1:5501/artist.html">ARTIST</a></li>
+                    <li><a href="http://127.0.0.1:5501/product.html">PRODUCT</a></li>
+                    <li><a href="http://127.0.0.1:5501/notice.html">NOTICE</a></li>
+                    <li><a href="http://127.0.0.1:5501/appointment.html">APPOINTMENT</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>

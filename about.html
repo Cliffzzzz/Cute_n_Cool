@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <title>關於ABOUT</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        /* outline: solid red; */
+    }
+    header{
+        position: sticky;
+        top: 0px;
+        z-index: 1;
+    }
+    /* .header_container{
+        width: 1920px;
+        background-color: rgb(203, 203, 203);
+        padding: 30px 0;
+    } */
+    .menu_list_logo img{
+        width: 64px;
+        display: block;
+    }
+    .menu li{
+        list-style: none;
+    }
+    nav a{
+        color: black;
+        text-decoration: none;
+        font-size: 20px;
+    }
+    nav{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .menu_list_left{
+        display: flex;
+        padding: 20px 50px;
+    }
+    .menu_list_left li{
+        padding: 20px 30px 20px 30px;
+    }
+    .menu_list_right{
+        display: flex;
+        padding: 20px 120px;
+    }
+    .menu_list_right li{
+        text-align: center;
+        padding: 20px;
+    }
+    .menu_list_logo{
+        margin: auto;
+    }
+    .cart_icon{
+        padding: 20px 10px;
+    }
+    nav h3{
+        font-size: 14px;
+        text-align: center;
+    }
+    .about_title_box{
+        display: flex;
+        justify-content: center;
+        padding: 60px 0 40px 0;
+    }
+    .about_img_box img{
+        margin: 0 40px;
+        filter: drop-shadow(7px 7px 6px rgba(0, 0, 0, 0.25));
+    }
+    .about_title h2{
+        font-size: 36px;
+        font-family: 'Noto Sans TC', sans-serif;
+        letter-spacing: 0.15em;
+        font-weight: 400;
+        padding: 30px 0;
+    }
+    .about_title span{
+        font-size: 24px;
+        letter-spacing: 0.2em;
+    }
+    .about_title h3{
+        font-size: 24px;
+        font-family: 'Noto Sans TC', sans-serif;
+        letter-spacing: 0.2em;
+        font-weight: 400;
+    }
+    .about_title{
+        /* flex-direction: column; */
+        margin-top: 210px;
+        /* margin-bottom: auto; */
+        padding: 20px;
+    }
+    .about_title_en{
+        position: relative;
+        color: white;
+        top: 50px;
+    }
+    .about_title img{
+        width: 40px;
+        position: relative;
+        top: 70px;
+        right: 20px;
+        z-index: -1;
+    }
+    .about_text{
+        font-size: 24px;
+        letter-spacing: 0.15em;
+        font-family: 'Noto Sans TC', sans-serif;
+        width: 1740px;
+        font-weight: 400;
+        line-height: 48px;
+        display: flex;
+        justify-content: right;
+        background-color: #3565AC;
+        color: white;
+        padding: 250px 0 80px 0;
+        position: relative;
+        bottom: 190px;
+        z-index: -1;
+    }
+    .about_text p{
+        position: relative;
+        right: 80px;
+    }
+    .environment_title{
+        display: flex;
+        padding: 0 0 60px 0;
+        flex-direction: column;
+        text-align: center;
+    }
+    .environment_title h2{
+        font-size: 36px;
+        letter-spacing: 0.15em;
+        font-family: 'Noto Sans TC', sans-serif;
+        font-weight: 400;
+    }
+    .environment_title h3{
+        font-size: 24px;
+        letter-spacing: 0.2em;
+        font-family: 'Noto Sans TC', sans-serif;
+        font-weight: 400;
+    }
+    .environment_title img{
+        width: 40px;
+        position: relative;
+        left: 860px;
+        bottom: 105px;
+        z-index: -1;
+    }
+    .environment_video{
+        display: flex;
+        position: relative;
+        justify-content: center;
+    }
+    .environment_video video{
+        width: 1000px;
+        border-radius: 20px;
+    }
+    /* .environment_video img{
+        filter: drop-shadow(7px 7px 6px rgba(0, 0, 0, 0.25));
+    } */
+    .environment_video_tag{
+        padding: 20px 80px;
+    }
+    .environment_video_tag h3{
+        writing-mode: vertical-lr;
+        font-size: 24px;
+        font-weight: 400;
+        letter-spacing: 0.8em;
+        line-height: 60px;
+    }
+    .environment_video_tag span{
+        position: absolute;
+        left: 400px;
+        bottom: 0;
+        padding: 110px 0 0 0;
+    }
+    /* .play{
+        position: absolute;
+        top: 250px;
+        width: 110px;
+        height: 110px;
+        border-radius: 999em;
+        background-color: rgba(255, 255, 255, 0.81);
+    }
+    .play:hover{
+        cursor: pointer;
+    }
+    .triangle{
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 25px 0 25px 50px;
+        border-color: transparent transparent transparent #919191;
+        position: absolute;
+        top: 30px;
+        left: 35px;
+    } */
+    .about_background{
+        position: absolute;
+        z-index: -1;
+    }
+    .environment_img_left{
+        width: 611px;
+        margin: 15px;
+    }
+    .environment_img_right{
+        width: 611px;
+        margin: 15px;
+    }
+    .environment_img_box{
+        justify-content: center;
+        display: flex;
+        margin: 50px 0 0 0;
+    }
+    .environment_img_box img{
+        margin: 15px 0;
+        filter: drop-shadow(7px 7px 6px rgba(0, 0, 0, 0.25));
+    }
+    .environment_img_big{
+        display: flex;
+        justify-content: center;
+        filter: drop-shadow(7px 7px 6px rgba(0, 0, 0, 0.25));
+    }
+    .environment_img_boottom{
+        display: flex;
+        justify-content: center;
+        margin: 15px 15px 100px 15px;
+    }
+    .environment_img_boottom img{
+        filter: drop-shadow(7px 7px 6px rgba(0, 0, 0, 0.25));
+        margin: 15px;
+    }
+    .footer_container{
+        background-color: #DFDFDF;
+        padding: 60px;
+    }
+    .store_information_box{
+        display: flex;
+    }
+    .footer_container h3{
+        font-size: 24px;
+        padding: 20px 10px 40px 10px;
+        letter-spacing: 0.15em;
+        font-weight: 500;
+    }
+    .footer_container h4{
+        font-size: 20px;
+        padding: 10px;
+        font-weight: 400;
+        letter-spacing: 0.15em;
+        line-height: 40px;
+    }
+    .store_zh{
+        padding: 10px 20px 10px ;
+        width: 600px;
+    }
+    .store_en{
+        padding: 10px 20px 10px ;
+        width: 800px;
+    }
+    .footer_container span{
+        font-weight: 500;
+    }
+    .footer_icon{
+        display: flex;
+        justify-content: right;
+        position: relative;
+        bottom: 300px;
+    }
+    .footer_link{
+        display: flex;
+        margin-left: auto;
+    }
+    .footer_link li{
+        list-style: none;
+        padding: 0 10px;
+    }
+    .footer_link_box{
+        display: flex;
+    }
+    .footer_link a{
+        color: black;
+        font-size: 14px;
+        font-weight: 400;
+    }
+    .menu_list_left li::after{
+        content:" ";
+        display:block; 
+        width: 0%;
+        height: 1px;
+        background-color: black;
+        transition: .4s .2s;
+    }
+    .menu_list_left li:hover::after{
+        width: 100%;
+    }
+    .menu_list_right li::after{
+        content:" ";
+        display:block; 
+        width: 0%;
+        height: 1px;
+        background-color: black;
+        transition: .4s .2s;
+    }
+    .menu_list_right li:hover::after{
+        width: 100%;
+    }
+</style>
+<body>
+    
+    <header>
+        <div class="header_container">
+            <div class="menu">
+                <nav>
+                    <ul class="menu_list_left">
+                        <li><a href="about.html">Cute n' Cool?<h3>ABOUT</h3></a></li>
+                        <li><a href="news.html">近期活動<h3>NEWS</h3></a></li>
+                        <li><a href="artist.html">刺青師<h3>ARTIST</h3></a></li>
+                        <li><a href="product.html">店內商品<h3>PRODUCT</h3></a></li>
+                    </ul>
+                    <div class="menu_list_logo">
+                        <a href="Cute n' Cool.html"><img src="LOGO/LOGO.png" alt=""></a>
+                    </div>
+                    <ul class="menu_list_right">
+                        <li><a href="notice.html">預約流程<h3>APPOINTMENT<br>PROCESS</h3></a>
+                        </li>
+                        <li><a href="appointment.html">預約討論<h3>APPOINTMENT</h3></a></li>
+                        <div class="cart_icon">
+                            <a href="shopping_cart.html"><img src="img/cart.png" alt=""></a>
+                        </div>
+                        <li><a href="login.html">登入<h3>LOG IN</h3></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="about_container">
+        <div class="about_title_box">
+            <div class="about_img_box">
+                <img src="img/about_img/1-1.png" alt=""></div>
+            <div class="about_title">
+                <img src="img/title.png" alt="">
+                <h2>店內故事<span>ABOUT</span></h2>
+                <h3>"To get cute n' cool tattoo at the same time."<br>想帶給客人，輕鬆舒適的刺青空間＿</h3>
+                <h3 class="about_title_en">＃International Artists Guest Spot</h3>
+            </div>
+        </div>
+        <div class="about_text">
+            <p>想刺青卻對於一般的刺青店環境感到壓力嗎？<br>來我們這吧！以輕鬆舒適、無壓力的明亮空間為基底，國際化語言溝通的刺青創作團隊，所以也深受外國人喜愛。<br>
+            每月也迎接好幾組國外刺青師短期駐店，喜歡收集不同刺青風格的你們，絕對不要錯過！<br>
+            讓我們一起在這刺青宇宙裡旋轉吧！！！</p>
+        </div>
+    </div>
+    <div class="about_store_environment_container">
+        <div class="environment_title">
+            <h2>店內環境</h2>
+            <h3>STORE ENVIRONMENT</h3>
+            <img src="img/title.png" alt="">
+        </div>
+        <div class="environment_video">
+            <div class="environment_video_tag">
+                <h3>#舒適 明亮 輕鬆<br><span>給客人最好的刺青體驗</span></h3>
+            </div>
+            <div class="environment_video">
+                <!-- <img src="img/about_img/2-1.png" alt="">
+                <div class="play">
+                    <div class="triangle"></div>
+                </div> -->
+                <video src="Cute n' Cool_video.m4v" poster="img/about_img/2-1.png" controls></video>
+            </div>
+        </div>
+        <div class="about_background">
+            <img src="img/about_img/about_background.svg" alt="">
+        </div>
+        <div class="environment_img_box">
+            <div class="environment_img_left">
+                <img src="img/about_img/2-2.png" alt="">
+                <img src="img/about_img/2-3.png" alt="">
+            </div>
+            <div class="environment_img_right">
+                <img src="img/about_img/2-4.png" alt="">
+                <img src="img/about_img/2-5.png" alt="">
+            </div>
+        </div>
+        <div class="environment_img_big">
+            <img src="img/about_img/2-6.png" alt="">
+        </div>
+        <div class="environment_img_boottom">
+            <img src="img/about_img/2-7.png" alt="">
+            <img src="img/about_img/2-8.png" alt="">
+        </div>
+    </div>
+    <footer>
+        <div class="footer_container">
+            <div class="store_information_box">
+                <div class="store_zh">
+                    <h3>商店資訊</h3>
+                    <h4><span>營業時間：</span>3:00pm-8:00pm(每週三公休)</h4>
+                    <h4><span>地址：</span>104台北市中山區中山北路一段140巷18號3樓</h4>
+                    <h4><span>聯絡電話：</span>0939-827881</h4>
+                </div>
+                <div class="store_en">
+                    <h3>STORE INFORMATION</h3>
+                    <h4><span>STORE HOURS：</span>3:00pm-8:00pm(closed on Wednesday)</h4>
+                    <h4><span>ADDRESS：</span>3F,No.18,Ln.140,Sec.1,Zhongshan N. Rd,<br>Zhongshan Dist,Taipei City 104, Taiwan</h4>
+                    <h4><span>TELEPHONE：</span>0939-827881</h4>
+                </div>
+            </div>
+            <div class="footer_icon">
+                <img src="img/facebook_icon.png" alt="">
+                <img src="img/instagram_icon.png" alt="">
+            </div>
+            <div class="footer_link_box">
+                <ul class="footer_link">
+                    <li><a href="http://127.0.0.1:5501/about.html">ABOUT</a></li>
+                    <li><a href="http://127.0.0.1:5501/news.html">NEWS</a></li>
+                    <li><a href="http://127.0.0.1:5501/artist.html">ARTIST</a></li>
+                    <li><a href="http://127.0.0.1:5501/product.html">PRODUCT</a></li>
+                    <li><a href="http://127.0.0.1:5501/notice.html">NOTICE</a></li>
+                    <li><a href="http://127.0.0.1:5501/appointment.html">APPOINTMENT</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
